@@ -12,4 +12,3 @@ Despliegue de plataforma: XAMPP.
 
 Link de github: https://github.com/DanSanchezHerrera/PequeMundo.git
 Link de InfinityFree: https://pequemundo.ct.ws/
-c
