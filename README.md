@@ -1,10 +1,10 @@
 # PequeMundo
 Proyecto PequeMundo para integración de plataformas
 Integrantes:
-	Bastián Schibar.
-	Diego Bustos.
-	Daniela Sánchez.
-	Benjamín Rapimán.
+	-Bastián Schibar.
+	-Diego Bustos.
+	-Daniela Sánchez.
+	-Benjamín Rapimán.
 
 Lenguajes usados: PHP, Python, HTML, CSS.
 Base de datos utilizada: MySQL.
