@@ -1,32 +1,37 @@
 <?php
-    //importar la conexión
+    // importar la conexión
     require_once "../config/conexion.php";
+	
+    // procesar la solicitud de registrar
+    if(isset($_POST["btnRegistrar"])){
 
-//procesar la solicitud de registrar
-if(isset($_POST["btnRegistrar"])){
-        $usuario = $_POST["username"];
+        $nombre = $_POST["nombre"];
+        $apellido = $_POST["apellido"];
         $password = $_POST["password"];
+        $telefono = $_POST["telefono"];
         $tipo_usuario = $_POST["tipo_usuario"];
-       
-        //encriptar la password
+
+        // encriptar la contraseña
         $pass_enc = password_hash($password, PASSWORD_DEFAULT);
-        $sql = "INSERT INTO usuario (username, password, tipo_usuario)
-        VALUES('$usuario','$pass_enc','$tipo_usuario')";
-       
-        //guardar usuario en la base de datos
+
+        // consulta SQL
+        $sql = "INSERT INTO cliente (nombre, apellido, password, telefono, tipo_usuario)
+                VALUES ('$nombre', '$apellido', '$pass_enc', '$telefono', '$tipo_usuario')";
+
+        // guardar en la base de datos
         $resultado = mysqli_query($conexion, $sql);
-       
-        //validar si se guarda o no
+
+        // validar resultado
         if($resultado){
             echo "<script>
-            alert('Usuario registrado correctamente');
+                    alert('Cliente registrado correctamente');
                     window.location.href = '../index.php';
-            </script>";
+                  </script>";
         }else{
             echo "<script>
-            alert('Error al registrar el usuario');
+                    alert('Error al registrar el cliente');
                     window.location.href = '../index.php';
-            </script>";
+                  </script>";
         }
     }
 ?>
