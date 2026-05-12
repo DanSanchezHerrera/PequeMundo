@@ -9,8 +9,10 @@
         <title>Inicio - PequeMundo</title>
     </head>
     <body>
+        <!--NAVBAR-->
         <?php include 'masterpage/menu.php'; ?>
         <main class="container my-5">
+            //Primer fila de dos columnas; imagen + descripción
             <section class="row align-items-center mb-5">
                 <div class="col-md-4 text-center">
                     <img src="img/pequeMundo_icono2.png" alt="Logo Pequemundo" class="imagen-home">
@@ -23,11 +25,13 @@
                     </div>
                 </div>
             </section>
+            <!--Segunda fila, imagen-->
             <section class="row mb-5">
                 <div class="col-12">
                     <img src="img/cuna.png" alt="Cuna Bebé" class="img-fluid rounded">
                 </div>
             </section>
+            <!-- Tercera fila, sobre nosotros -->
             <h2>Sobre Nosotros</h2>
             <section class="row mb-5 p-3 bg-white rounded shadow-sm">
                 <div class="col-12">
@@ -38,6 +42,7 @@
                 </div>
             </section>
         </main>
+        <!--FOOTER-->
         <?php include 'masterpage/footer.php'; ?>
     </body>
 </html>
