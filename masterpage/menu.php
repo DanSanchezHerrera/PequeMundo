@@ -15,7 +15,7 @@
       </li>
     </ul>
     <div class="d-flex">
-      <a class="btn btn-custom me-2" href="../iniciar_sesion.php">Iniciar Sesión</a>
+      <a class="btn btn-custom me-2" href="iniciar_sesion.php">Iniciar Sesión</a>
     </div>
   </div>
 </nav>
