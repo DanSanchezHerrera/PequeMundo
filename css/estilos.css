@@ -1,17 +1,19 @@
 /*FONTS*/
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
+/*FUENTES APLICADAS*/
 :root {
     --fuente-titulos: 'Nunito', sans-serif;
     --fuente-texto: 'Atkinson Hyperlegible', sans-serif;
 }
 
+/*BODY (fuente + color de fondo)*/
 body {
     font-family: 'Atkinson Hyperlegible', sans-serif;
     background-color: #faf7f2;
 }
 
-/*INICIO*/
+/*INICIO (imagen de inicio + h2)*/
 .imagen-home {
     max-width: 150px;
 }
