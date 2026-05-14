@@ -13,6 +13,9 @@
       <li class="nav-item">
         <a class="nav-link" href="index.php">Contacto</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="nosotros.php">Nosotros</a>
+      </li>
     </ul>
     <div class="d-flex">
       <a class="btn btn-custom me-2" href="iniciar_sesion.php">Iniciar Sesión</a>
