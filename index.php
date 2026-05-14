@@ -12,7 +12,7 @@
         <!--NAVBAR-->
         <?php include 'masterpage/menu.php'; ?>
         <main class="container my-5">
-            //Primer fila de dos columnas; imagen + descripción
+            <!--Primer fila de dos columnas; imagen + descripción-->
             <section class="row align-items-center mb-5">
                 <div class="col-md-4 text-center">
                     <img src="img/pequeMundo_icono2.png" alt="Logo Pequemundo" class="imagen-home">
@@ -37,7 +37,7 @@
                 <div class="col-12">
                     <p>PequeMundo es un emprendimiento chileno dedicado al diseño y venta de muebles infantiles, enfocado en crear espacios seguros y acogedores para los más pequeños. Nos especializamos en productos funcionales y de calidad que acompañan el crecimiento de cada niño.</p>
                     <div class="text-end">
-                        <a class="btn btn-custom " href="contacto.php">Conocer Más</a>
+                        <a class="btn btn-custom" href="contacto.php">Conocer Más</a>
                     </div>
                 </div>
             </section>
