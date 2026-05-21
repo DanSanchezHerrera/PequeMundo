@@ -13,6 +13,21 @@ body {
     background-color: #faf7f2;
 }
 
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
 /*INICIO (imagen de inicio + h2)*/
 .imagen-home {
     max-width: 150px;

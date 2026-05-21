@@ -1,0 +1,21 @@
+/* FOOTER */
+footer.footer-pequemundo {
+    width: 100%;
+    background-color: #fcdb7e !important;
+    margin-top: auto;
+}
+
+.footer-copy {
+    background-color: #f8d77b;
+    color: #2f6f73;
+    font-family: var(--fuente-texto);
+}
+
+.footer-icon {
+    color: #2f6f73 !important;
+    text-decoration: none;
+}
+
+.footer-icon:hover {
+    color: #9c8030 !important;
+}
