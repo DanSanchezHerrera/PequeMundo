@@ -1,0 +1,121 @@
+/* REGISTRO */
+
+/* Contenedor principal del registro */
+.registro-contenedor {
+    max-width: 980px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 6px 16px rgba(72, 56, 18, 0.12);
+    overflow: hidden;
+}
+
+/* Área del formulario */
+.registro-formulario {
+    padding: 45px 55px;
+}
+
+/* Título */
+.registro-formulario h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: var(--fuente-titulos);
+    color: #9a7c3a;
+}
+
+/* Texto descriptivo */
+.registro-texto {
+    margin-bottom: 10px;
+    color: #555555;
+    font-family: var(--fuente-texto);
+}
+
+/* Aviso de campos obligatorios */
+.registro-aviso {
+    font-size: 14px;
+    color: #555555;
+    margin-bottom: 25px;
+    font-family: var(--fuente-texto);
+}
+
+/* Asterisco obligatorio */
+.campo-obligatorio {
+    color: #8d3939;
+    font-weight: 700;
+}
+
+/* Texto opcional */
+.campo-opcional {
+    color: #777777;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+/* Labels */
+.registro-formulario .form-label {
+    color: #333333;
+    font-family: var(--fuente-texto);
+    margin-bottom: 6px;
+}
+
+/* Inputs y select */
+.registro-formulario .form-control {
+    min-height: 42px;
+    border: 1px solid #d8d8d8;
+    border-radius: 6px;
+    font-family: var(--fuente-texto);
+}
+
+/* Efecto al seleccionar un campo */
+.registro-formulario .form-control:focus {
+    border-color: #9a7c3a;
+    box-shadow: 0 0 0 0.2rem rgba(154, 124, 58, 0.18);
+}
+
+/* Textos pequeños bajo inputs */
+.registro-formulario small {
+    font-size: 13px;
+    color: #777777;
+}
+
+/* Columna derecha con imagen */
+.registro-imagen {
+    width: 100%;
+    background-color: #fff8df;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 35px;
+}
+
+/* Imagen del registro */
+.registro-imagen img {
+    max-width: 260px;
+    width: 100%;
+    height: auto;
+}
+
+/* Botón */
+.registro-formulario .btn-custom {
+    margin-top: 5px;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    .registro-formulario {
+        padding: 30px 25px;
+    }
+
+    .registro-contenedor {
+        margin: 0 10px;
+    }
+}
+
+/* Botón de registro */
+.registro-formulario .btn-custom {
+    color: #ffffff !important;
+}
+
+.registro-formulario .btn-custom:hover {
+    color: #ffffff !important;
+}
