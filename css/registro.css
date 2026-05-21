@@ -119,3 +119,49 @@
 .registro-formulario .btn-custom:hover {
     color: #ffffff !important;
 }
+
+/* LOGIN */
+.login-contenedor {
+    max-width: 820px;
+}
+
+.login-formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-link {
+    color: #555555;
+    font-family: var(--fuente-texto);
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.login-link:hover {
+    color: #9a7c3a;
+}
+
+.login-registro {
+    color: #555555;
+    font-family: var(--fuente-texto);
+    margin-bottom: 0;
+}
+
+.login-registro a {
+    color: #555555;
+    text-decoration: underline;
+}
+
+.login-registro a:hover {
+    color: #9a7c3a;
+}
+
+/* Botón login */
+.login-formulario .btn-custom {
+    color: #ffffff !important;
+}
+
+.login-formulario .btn-custom:hover {
+    color: #ffffff !important;
+}
