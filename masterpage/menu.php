@@ -23,9 +23,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="catalogo.php">Catálogo</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="nosotros.php">Nosotros</a>
-                </li>
+                <!-- Nostros solo para clientes y público -->
+                <?php if (!isset($_SESSION["tipo_usuario"]) || $_SESSION["tipo_usuario"] == "cliente") { ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.php">Nosotros</a>
+                    </li>
+                <?php } ?>
                 <!-- Opciones para cliente -->
                 <?php if (isset($_SESSION["tipo_usuario"]) && $_SESSION["tipo_usuario"] == "cliente") { ?>
                     <li class="nav-item">
@@ -41,28 +44,34 @@
                 <!-- Opciones para vendedor -->
                 <?php if (isset($_SESSION["tipo_usuario"]) && $_SESSION["tipo_usuario"] == "vendedor") { ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="vendedor_panel.php">Panel vendedor</a>
+                        <a class="nav-link" href="gestionar_productos.php">Gestionar Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="gestionar_productos.php">Productos</a>
+                        <a class="nav-link" href="gestionar_pedidos.php">Gestionar Pedidos</a>
+                    </li>
+                <?php } ?>
+                <!-- Opciones para administrador -->
+                <?php if (isset($_SESSION["tipo_usuario"]) && $_SESSION["tipo_usuario"] == "admin") { ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gestionar_productos.php">Gestionar Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="gestionar_pedidos.php">Pedidos</a>
+                        <a class="nav-link" href="gestionar_pedidos.php">Gestionar Pedidos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gestionar_usuarios.php">Gestionar Usuarios</a>
                     </li>
                 <?php } ?>
                 <!-- Opciones para finanzas -->
                 <?php if (isset($_SESSION["tipo_usuario"]) && $_SESSION["tipo_usuario"] == "finanzas") { ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="finanzas_panel.php">Finanzas</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="reportes.php">Reportes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="ranking.php">Ranking</a>
+                        <a class="nav-link" href="ranking.php">Ranking Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="historial.php">Historial</a>
+                        <a class="nav-link" href="historial.php">Historial de ventas</a>
                     </li>
                 <?php } ?>
             </ul>
