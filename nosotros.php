@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,7 +41,7 @@
             background: white;
             padding: 2rem;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             border-left: 5px solid #9a7c3a;
         }
 
@@ -69,12 +70,12 @@
             border-radius: 10px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
         }
 
         .team-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
         }
 
         .team-card h3 {
@@ -139,7 +140,7 @@
             padding: 1.5rem;
             border-radius: 8px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
 
         .tech-icon {
@@ -227,6 +228,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navbar -->
     <?php include 'masterpage/menu.php'; ?>
@@ -234,90 +236,96 @@
     <!-- Hero Section -->
     <section class="hero-nosotros">
         <div class="container">
-            <h1>Conoce Nuestra Historia</h1>
-            <p>PequeMundo: Transformando el comercio de muebles infantiles en Chile</p>
+            <h1>🏢 Sobre PequeMundo</h1>
+            <p>Muebles infantiles de calidad para crear espacios seguros y acogedores</p>
         </div>
     </section>
 
     <!-- Contenido Principal -->
     <main class="container my-5">
-        
+
         <!-- Sección Historia -->
         <section class="mb-5">
             <h2 class="section-title">📖 Nuestra Historia</h2>
-            
+
             <div class="historia-grid">
                 <div class="historia-card">
-                    <h3>🎯 Origen de PequeMundo</h3>
+                    <h3>🎯 ¿Quiénes Somos?</h3>
                     <p>
-                        PequeMundo es un emprendimiento chileno dedicado al diseño, fabricación y venta de muebles 
-                        infantiles de alta calidad. Durante años, la empresa ha crecido de manera consistente, atendiendo 
-                        a familias de toda la región metropolitana que buscan muebles modernos, seguros y funcionales para 
-                        sus hijos.
+                        PequeMundo es una empresa chilena especializada en el diseño, fabricación y venta de muebles
+                        infantiles de alta calidad. Desde hace años, trabajamos con dedicación para crear productos
+                        que transforman los espacios de los más pequeños en lugares seguros, acogedores y funcionales.
                     </p>
                 </div>
 
                 <div class="historia-card">
-                    <h3>⚡ El Desafío</h3>
+                    <h3>❤️ Nuestro Compromiso</h3>
                     <p>
-                        Inicialmente, PequeMundo gestionaba sus ventas de manera manual a través de redes sociales. Aunque 
-                        efectivo, este proceso era ineficiente, propenso a errores y limitaba el potencial de crecimiento 
-                        de la empresa. Los clientes carecían de una experiencia de compra moderna y segura.
+                        Nos comprometemos a ofrecer muebles que combinan diseño moderno, seguridad garantizada y
+                        durabilidad. Cada producto está pensado para acompañar el crecimiento de los niños,
+                        proporcionando confort y estilo a las familias chilenas.
                     </p>
                 </div>
 
                 <div class="historia-card">
-                    <h3>✨ La Solución</h3>
+                    <h3>✨ La Diferencia de PequeMundo</h3>
                     <p>
-                        En 2026, como parte del curso de Integración de Plataformas (ASY5131) de DUOC UC, se desarrolló 
-                        una plataforma de comercio electrónico integral que automatiza completamente los procesos de venta, 
-                        desde la visualización del catálogo hasta el seguimiento de pedidos en tiempo real.
+                        Nos destacamos por nuestra atención personalizada, productos de calidad superior y precios
+                        competitivos. Buscamos ser más que un proveedor: queremos ser el aliado de confianza de las
+                        familias que desean lo mejor para sus hijos.
                     </p>
                 </div>
+            </div>
+
+            <div class="mt-4 p-4 bg-light rounded" style="border-left: 4px solid #9a7c3a;">
+                <p class="responsive-text mb-0">
+                    <strong>Ubicación:</strong> Región Metropolitana, Santiago. Nos encontramos disponibles para retiro
+                    en tienda y contamos con servicio de envío a domicilio en toda la región con cálculo de tarifas
+                    según destino.
+                </p>
             </div>
         </section>
 
         <!-- Misión y Visión -->
         <section class="mb-5 bg-white rounded p-4 shadow-sm">
-            <h2 class="section-title">Misión y Visión</h2>
-            
+            <h2 class="section-title">🎯 Misión y Visión</h2>
+
             <div class="mission-grid">
                 <div class="mission-card">
                     <h3>Nuestra Misión</h3>
                     <p>
-                        Automatizar y digitalizar los procesos de venta de PequeMundo, proporcionando una plataforma de 
-                        comercio electrónico moderna, segura y escalable que mejore la experiencia del cliente y la 
-                        eficiencia operativa de la empresa.
+                        Diseñar y comercializar muebles infantiles que combinen calidad, seguridad y estética,
+                        ofreciendo una experiencia de compra moderna y confiable que satisfaga las necesidades
+                        de las familias chilenas.
                     </p>
                 </div>
 
                 <div class="mission-card">
                     <h3>Nuestra Visión</h3>
                     <p>
-                        Ser la solución tecnológica integral que permita a PequeMundo expandir su presencia en el mercado, 
-                        integrar múltiples canales de venta y ofrecer una experiencia de compra excepcional a clientes en 
-                        toda la región.
+                        Ser la marca preferida de muebles infantiles en Chile, reconocida por nuestra calidad,
+                        innovación en diseño y excelente servicio al cliente. Buscamos crecer de manera sostenible
+                        manteniendo siempre nuestro compromiso con las familias.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Proyecto Académico -->
+        <!-- Categorías de Productos -->
         <section class="mb-5 bg-white rounded p-4 shadow-sm">
-            <h2 class="section-title">🎓 Proyecto Académico ASY5131</h2>
-            
+            <h2 class="section-title">📦 Nuestros Productos</h2>
+
             <p class="responsive-text mb-4">
-                Este proyecto fue desarrollado como parte del curso <strong>Integración de Plataformas (ASY5131)</strong> 
-                de DUOC UC, bajo la dirección de <strong>Pavel Morales</strong>. Es una aplicación integral de conceptos de 
-                integración de sistemas, arquitectura de software y desarrollo web.
+                Contamos con una amplia variedad de muebles diseñados para cada etapa del crecimiento de tu hijo:
             </p>
 
             <div class="row">
                 <div class="col-md-6 col-lg-4 mb-3">
                     <div class="card border-left" style="border-left: 4px solid #9a7c3a;">
                         <div class="card-body">
-                            <h5 class="card-title" style="color: #9a7c3a;">Período de Desarrollo</h5>
-                            <p class="card-text">Marzo - Abril 2026</p>
+                            <h5 class="card-title" style="color: #9a7c3a;">👶 Cunas y Corralitos</h5>
+                            <p class="card-text">Espacios seguros y cómodos para el descanso de los bebés, con
+                                diseños funcionales y modernos.</p>
                         </div>
                     </div>
                 </div>
@@ -325,8 +333,9 @@
                 <div class="col-md-6 col-lg-4 mb-3">
                     <div class="card border-left" style="border-left: 4px solid #9a7c3a;">
                         <div class="card-body">
-                            <h5 class="card-title" style="color: #9a7c3a;">Organización</h5>
-                            <p class="card-text">The Pixies Coop - DUOC UC</p>
+                            <h5 class="card-title" style="color: #9a7c3a;">🛏️ Camas Infantiles</h5>
+                            <p class="card-text">Camas seguras y atractivas para niños en crecimiento, con
+                                opciones de diferentes tamaños.</p>
                         </div>
                     </div>
                 </div>
@@ -334,8 +343,9 @@
                 <div class="col-md-6 col-lg-4 mb-3">
                     <div class="card border-left" style="border-left: 4px solid #9a7c3a;">
                         <div class="card-body">
-                            <h5 class="card-title" style="color: #9a7c3a;">🎯 Enfoque</h5>
-                            <p class="card-text">Integración de servicios SOAP/REST</p>
+                            <h5 class="card-title" style="color: #9a7c3a;">🗄️ Cómodas y Organizadores</h5>
+                            <p class="card-text">Soluciones de almacenamiento prácticas y bonitas para mantener
+                                el orden en la habitación.</p>
                         </div>
                     </div>
                 </div>
@@ -343,8 +353,9 @@
                 <div class="col-md-6 col-lg-4 mb-3">
                     <div class="card border-left" style="border-left: 4px solid #9a7c3a;">
                         <div class="card-body">
-                            <h5 class="card-title" style="color: #9a7c3a;">Tecnologías</h5>
-                            <p class="card-text">PHP, MySQL, REST API, SOAP</p>
+                            <h5 class="card-title" style="color: #9a7c3a;">🪑 Sillas y Mesas</h5>
+                            <p class="card-text">Muebles ergonómicos diseñados para el tamaño y necesidades de
+                                los niños.</p>
                         </div>
                     </div>
                 </div>
@@ -352,8 +363,9 @@
                 <div class="col-md-6 col-lg-4 mb-3">
                     <div class="card border-left" style="border-left: 4px solid #9a7c3a;">
                         <div class="card-body">
-                            <h5 class="card-title" style="color: #9a7c3a;">Hospedaje</h5>
-                            <p class="card-text">Infinityfree (Hosting gratuito)</p>
+                            <h5 class="card-title" style="color: #9a7c3a;">🎨 Accesorios Decorativos</h5>
+                            <p class="card-text">Complementos que agregan estilo y calidez a los espacios de
+                                los niños.</p>
                         </div>
                     </div>
                 </div>
@@ -361,111 +373,64 @@
                 <div class="col-md-6 col-lg-4 mb-3">
                     <div class="card border-left" style="border-left: 4px solid #9a7c3a;">
                         <div class="card-body">
-                            <h5 class="card-title" style="color: #9a7c3a;">Alcance</h5>
-                            <p class="card-text">Procesos de ventas y e-commerce</p>
+                            <h5 class="card-title" style="color: #9a7c3a;">📚 Muebles Multifuncionales</h5>
+                            <p class="card-text">Soluciones inteligentes que combinan múltiples funciones en
+                                un solo mueble.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Equipo de Desarrollo -->
+        <!-- Por qué elegir PequeMundo -->
         <section class="mb-5 bg-white rounded p-4 shadow-sm">
-            <h2 class="section-title">Equipo de Desarrollo - The Pixies Coop</h2>
-            
-            <p class="responsive-text mb-4">
-                Somos un equipo de estudiantes de DUOC UC especializados en desarrollo de software e integración de 
-                plataformas, comprometidos con la excelencia académica y la calidad en la entrega de soluciones tecnológicas.
-            </p>
+            <h2 class="section-title">⭐ ¿Por Qué Elegir PequeMundo?</h2>
 
-            <div class="team-grid">
-                <div class="team-card">
-                    <div style="font-size: 3rem;">👨‍💻</div>
-                    <h3>Diego Bustos</h3>
-                    <div class="role">Frontend Developer</div>
-                    <div class="description">
-                        <strong>Arquitectura & Integración</strong><br>
-                        Especializado en arquitectura de sistemas y diseño de integraciones. Responsable del diseño 
-                        técnico y orquestación de servicios.
-                    </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">✔️</div>
+                    <h4>Calidad Garantizada</h4>
+                    <p>Todos nuestros productos cumplen con estándares de seguridad internacionales</p>
                 </div>
-
-                <div class="team-card">
-                    <div style="font-size: 3rem;">📊</div>
-                    <h3>Benjamín Rapiman</h3>
-                    <div class="role">Business Analyst</div>
-                    <div class="description">
-                        <strong>Requerimientos & Procesos</strong><br>
-                        Responsable del análisis de requerimientos funcionales y no funcionales. Especialista en 
-                        mapeo de procesos de negocio.
-                    </div>
+                <div class="value-card">
+                    <div class="value-icon">💰</div>
+                    <h4>Precios Competitivos</h4>
+                    <p>Excelente relación calidad-precio sin comprometer la durabilidad</p>
                 </div>
-
-                <div class="team-card">
-                    <div style="font-size: 3rem;">⚙️</div>
-                    <h3>Bastian Schibar</h3>
-                    <div class="role">Backend Developer</div>
-                    <div class="description">
-                        <strong>Infraestructura & Planificación</strong><br>
-                        Especializado en arquitectura física del sistema y planificación de recursos. Responsable 
-                        de infraestructura y despliegue.
-                    </div>
+                <div class="value-card">
+                    <div class="value-icon">🎨</div>
+                    <h4>Diseño Moderno</h4>
+                    <p>Estilos actuales que se adaptan a cualquier decoración de habitación</p>
                 </div>
-
-                <div class="team-card">
-                    <div style="font-size: 3rem;">📋</div>
-                    <h3>Daniela Sánchez</h3>
-                    <div class="role">Project Manager</div>
-                    <div class="description">
-                        <strong>Gestión & Coordinación</strong><br>
-                        Líder del proyecto y coordinadora general. Responsable de la comunicación con stakeholders 
-                        y gestión del cronograma.
-                    </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h4>Atención Personalizada</h4>
+                    <p>Nuestro equipo está disponible para asesorarte en tu compra</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">📦</div>
+                    <h4>Entrega Rápida</h4>
+                    <p>Opciones de retiro en tienda y envío a domicilio en toda la región</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💳</div>
+                    <h4>Pago Seguro</h4>
+                    <p>Múltiples opciones de pago con garantía de seguridad en tus transacciones</p>
                 </div>
             </div>
         </section>
 
-        <!-- Arquitectura Técnica -->
+        <!-- Servicio al Cliente -->
         <section class="mb-5 bg-white rounded p-4 shadow-sm">
-            <h2 class="section-title">Arquitectura Técnica</h2>
-            
-            <p class="responsive-text mb-4">
-                La plataforma PequeMundo utiliza una arquitectura moderna de integración que combina servicios SOAP 
-                y REST para garantizar flexibilidad y escalabilidad.
-            </p>
+            <h2 class="section-title">🛍️ Nuestros Servicios</h2>
 
-            <h4 style="color: #9a7c3a; margin: 2rem 0 1rem 0; font-family: 'Nunito', sans-serif;">Stack Tecnológico</h4>
-            <div class="tech-grid">
-                <div class="tech-card">
-                    <div class="tech-icon">🌐</div>
-                    <h4>Frontend</h4>
-                    <p>HTML5, CSS3, JavaScript, Bootstrap 5</p>
-                </div>
-                <div class="tech-card">
-                    <div class="tech-icon">⚙️</div>
-                    <h4>Backend</h4>
-                    <p>PHP 7+, REST API, SOAP</p>
-                </div>
-                <div class="tech-card">
-                    <div class="tech-icon">💾</div>
-                    <h4>Base de Datos</h4>
-                    <p>MySQL 5.7+, Diseño Relacional</p>
-                </div>
-                <div class="tech-card">
-                    <div class="tech-icon">🚀</div>
-                    <h4>Hospedaje</h4>
-                    <p>Infinityfree (Free Hosting)</p>
-                </div>
-            </div>
-
-            <h4 style="color: #9a7c3a; margin: 2rem 0 1rem 0; font-family: 'Nunito', sans-serif;">Servicios Integrados</h4>
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <div class="card border-left" style="border-left: 4px solid #9a7c3a;">
                         <div class="card-body">
-                            <h5 class="card-title" style="color: #9a7c3a;">💳 Pasarela de Pagos</h5>
-                            <p class="card-text">Integración segura para procesar transacciones en línea con 
-                            confirmación automática.</p>
+                            <h5 class="card-title" style="color: #9a7c3a;">🏪 Retiro en Tienda</h5>
+                            <p class="card-text">Sin costo de envío. Ven a elegir personalmente tu mueble en
+                                nuestra sucursal. Atención de lunes a domingo.</p>
                         </div>
                     </div>
                 </div>
@@ -473,9 +438,9 @@
                 <div class="col-md-6 mb-3">
                     <div class="card border-left" style="border-left: 4px solid #9a7c3a;">
                         <div class="card-body">
-                            <h5 class="card-title" style="color: #9a7c3a;">📦 API de Catálogo</h5>
-                            <p class="card-text">Servicio RESTful que permite a terceros consultar y promocionar 
-                            productos.</p>
+                            <h5 class="card-title" style="color: #9a7c3a;">🚚 Envío a Domicilio</h5>
+                            <p class="card-text">Entrega segura y puntual. Tarifas competitivas según región.
+                                Seguimiento en tiempo real de tu pedido.</p>
                         </div>
                     </div>
                 </div>
@@ -483,9 +448,9 @@
                 <div class="col-md-6 mb-3">
                     <div class="card border-left" style="border-left: 4px solid #9a7c3a;">
                         <div class="card-body">
-                            <h5 class="card-title" style="color: #9a7c3a;">🚚 API de Logística</h5>
-                            <p class="card-text">Integración con empresa de transporte para seguimiento en 
-                            tiempo real.</p>
+                            <h5 class="card-title" style="color: #9a7c3a;">📋 Asesoría Gratuita</h5>
+                            <p class="card-text">Nuestros asesores pueden ayudarte a elegir el mueble ideal
+                                según las necesidades de tu espacio.</p>
                         </div>
                     </div>
                 </div>
@@ -493,61 +458,225 @@
                 <div class="col-md-6 mb-3">
                     <div class="card border-left" style="border-left: 4px solid #9a7c3a;">
                         <div class="card-body">
-                            <h5 class="card-title" style="color: #9a7c3a;">📊 Sistema de Logging</h5>
-                            <p class="card-text">Registro centralizado de transacciones para auditoría y análisis 
-                            de rendimiento.</p>
+                            <h5 class="card-title" style="color: #9a7c3a;">📞 Soporte Post-Venta</h5>
+                            <p class="card-text">Garantía en todos los productos y atención a consultas o
+                                problemas después de la compra.</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Compromiso con la familia -->
+        <section class="mb-5 bg-light rounded p-4 shadow-sm">
+            <h2 class="section-title">❤️ Nuestro Compromiso con tu Familia</h2>
+
+            <p class="responsive-text mb-3">
+                En PequeMundo entendemos que los muebles de tus hijos son mucho más que simples productos. Son espacios
+                donde crecen, aprenden y juegan. Por eso nos comprometemos a:
+            </p>
+
+            <ul style="list-style: none; padding: 0;">
+                <li class="mb-2"><strong>✓ Seguridad Primero:</strong> Cada producto está diseñado y probado para
+                    garantizar
+                    la máxima seguridad de los niños.</li>
+                <li class="mb-2"><strong>✓ Durabilidad:</strong> Utilizamos materiales de alta calidad que resisten el
+                    uso
+                    intenso de los niños.</li>
+                <li class="mb-2"><strong>✓ Estética y Funcionalidad:</strong> Combinamos diseño moderno con practicidad
+                    para espacios que funcionan y se ven bien.</li>
+                <li class="mb-2"><strong>✓ Precios Justos:</strong> Ofrecemos excelente calidad sin precios excesivos,
+                    porque sabemos que el presupuesto familiar es importante.</li>
+                <li class="mb-2"><strong>✓ Disponibilidad 24/7:</strong> Gracias a nuestra plataforma en línea, puedes
+                    explorar nuestro catálogo y hacer compras en cualquier momento.</li>
+            </ul>
         </section>
 
         <!-- Valores -->
         <section class="mb-5 bg-white rounded p-4 shadow-sm">
             <h2 class="section-title">✨ Nuestros Valores</h2>
-            
+
             <div class="values-grid">
                 <div class="value-card">
-                    <div class="value-icon">🎯</div>
-                    <h4>Precisión</h4>
-                    <p>Exactitud en cada detalle técnico y funcional</p>
+                    <div class="value-icon">👨‍👩‍👧‍👦</div>
+                    <h4>Familia Primero</h4>
+                    <p>Entendemos la importancia de crear espacios seguros para los más pequeños</p>
                 </div>
                 <div class="value-card">
-                    <div class="value-icon">🔒</div>
-                    <h4>Seguridad</h4>
-                    <p>Protección de datos de clientes y transacciones</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">⚡</div>
-                    <h4>Rendimiento</h4>
-                    <p>Velocidad y eficiencia en las operaciones</p>
+                    <div class="value-icon">🏆</div>
+                    <h4>Excelencia</h4>
+                    <p>Nos esforzamos por la máxima calidad en cada producto que ofrecemos</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">🤝</div>
-                    <h4>Colaboración</h4>
-                    <p>Trabajo en equipo y comunicación efectiva</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">📚</div>
-                    <h4>Aprendizaje</h4>
-                    <p>Mejora continua y adquisición de conocimiento</p>
+                    <h4>Confianza</h4>
+                    <p>Buscamos ser el aliado de confianza de las familias chilenas</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">🌱</div>
-                    <h4>Escalabilidad</h4>
-                    <p>Diseño preparado para crecimiento futuro</p>
+                    <h4>Sostenibilidad</h4>
+                    <p>Comprometidos con prácticas responsables con el medio ambiente</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h4>Innovación</h4>
+                    <p>Constantemente mejorando nuestros diseños y procesos</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💰</div>
+                    <h4>Transparencia</h4>
+                    <p>Precios justos y claros sin sorpresas en nuestras transacciones</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonios -->
+        <section class="mb-5 bg-light rounded p-4 shadow-sm">
+            <h2 class="section-title">⭐ Lo que Dicen Nuestros Clientes</h2>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="mb-2">
+                                <i class="fas fa-star" style="color: #9a7c3a;"></i>
+                                <i class="fas fa-star" style="color: #9a7c3a;"></i>
+                                <i class="fas fa-star" style="color: #9a7c3a;"></i>
+                                <i class="fas fa-star" style="color: #9a7c3a;"></i>
+                                <i class="fas fa-star" style="color: #9a7c3a;"></i>
+                            </div>
+                            <p class="card-text mb-3"><em>"Excelente calidad y muy buena atención. Los muebles de
+                                    PequeMundo han sido perfectos para la habitación de mis hijos."</em></p>
+                            <p class="card-text"><strong>- María González, Santiago</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="mb-2">
+                                <i class="fas fa-star" style="color: #9a7c3a;"></i>
+                                <i class="fas fa-star" style="color: #9a7c3a;"></i>
+                                <i class="fas fa-star" style="color: #9a7c3a;"></i>
+                                <i class="fas fa-star" style="color: #9a7c3a;"></i>
+                                <i class="fas fa-star" style="color: #9a7c3a;"></i>
+                            </div>
+                            <p class="card-text mb-3"><em>"Muy recomendado. Productos seguros, durables y con
+                                    diseños modernos. El envío fue rápido y sin problemas."</em></p>
+                            <p class="card-text"><strong>- Carlos Rodríguez, Providencia</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="mb-2">
+                                <i class="fas fa-star" style="color: #9a7c3a;"></i>
+                                <i class="fas fa-star" style="color: #9a7c3a;"></i>
+                                <i class="fas fa-star" style="color: #9a7c3a;"></i>
+                                <i class="fas fa-star" style="color: #9a7c3a;"></i>
+                                <i class="fas fa-star" style="color: #9a7c3a;"></i>
+                            </div>
+                            <p class="card-text mb-3"><em>"Encontré exactamente lo que buscaba. Los asesorías
+                                    gratuitas me ayudaron a elegir los muebles correctos para el espacio."</em></p>
+                            <p class="card-text"><strong>- Andrea López, Ñuñoa</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="mb-2">
+                                <i class="fas fa-star" style="color: #9a7c3a;"></i>
+                                <i class="fas fa-star" style="color: #9a7c3a;"></i>
+                                <i class="fas fa-star" style="color: #9a7c3a;"></i>
+                                <i class="fas fa-star" style="color: #9a7c3a;"></i>
+                                <i class="fas fa-star" style="color: #9a7c3a;"></i>
+                            </div>
+                            <p class="card-text mb-3"><em>"La mejor decisión de compra. Calidad premium a
+                                    precios accesibles. Mis hijos aman sus nuevos muebles."</em></p>
+                            <p class="card-text"><strong>- Patricia Díaz, La Florida</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto e Información -->
+        <section class="mb-5 bg-white rounded p-4 shadow-sm">
+            <h2 class="section-title">📞 Contáctanos</h2>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="card border-left" style="border-left: 4px solid #9a7c3a;">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: #9a7c3a;">
+                                <i class="fas fa-map-marker-alt"></i> Ubicación
+                            </h5>
+                            <p class="card-text">
+                                Región Metropolitana, Santiago<br>
+                                <small class="text-muted">Disponible para retiro en tienda</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="card border-left" style="border-left: 4px solid #9a7c3a;">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: #9a7c3a;">
+                                <i class="fas fa-envelope"></i> Email
+                            </h5>
+                            <p class="card-text">
+                                contacto@pequemundo.cl<br>
+                                <small class="text-muted">Respuesta en 24 horas</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="card border-left" style="border-left: 4px solid #9a7c3a;">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: #9a7c3a;">
+                                <i class="fas fa-phone"></i> Teléfono
+                            </h5>
+                            <p class="card-text">
+                                +56 9 XXXX XXXX<br>
+                                <small class="text-muted">Lunes a Domingo 9:00 - 18:00</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="card border-left" style="border-left: 4px solid #9a7c3a;">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: #9a7c3a;">
+                                <i class="fas fa-globe"></i> Síguenos
+                            </h5>
+                            <p class="card-text">
+                                <a href="#" class="text-decoration-none">Facebook</a> |
+                                <a href="#" class="text-decoration-none">Instagram</a><br>
+                                <small class="text-muted">@PequeMundoCL</small>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- CTA Final -->
         <section class="mb-5 bg-light rounded p-4 shadow-sm text-center">
-            <h2 class="section-title">¿Listo para comprar muebles infantiles?</h2>
+            <h2 class="section-title">¿Listo para crear el espacio perfecto para tus hijos?</h2>
             <p class="responsive-text">
-                Visita nuestro catálogo y descubre muebles de alta calidad para tus hijos.
+                Explora nuestro catálogo completo y encuentra el mueble ideal para tu familia.
             </p>
             <a href="catalogo.php" class="btn btn-custom btn-lg mt-3">
-                <i class="fas fa-shopping-bag me-2"></i> Ir al Catálogo
+                <i class="fas fa-shopping-bag me-2"></i> Ver Nuestro Catálogo
             </a>
         </section>
 
@@ -558,4 +687,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
