@@ -85,6 +85,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="gestionar_usuarios.php">Gestionar Usuarios</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="finanzas/index.php">
+                            <i class="fa-solid fa-chart-line me-1"></i>Finanzas
+                        </a>
+                    </li>
                 <?php } ?>
                 <!-- Opciones para finanzas -->
                 <?php if (isset($_SESSION["tipo_usuario"]) && $_SESSION["tipo_usuario"] == "finanzas") { ?>
