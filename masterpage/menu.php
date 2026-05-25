@@ -1,9 +1,30 @@
 <?php
+    // Iniciar sesión solo si todavía no existe una sesión activa
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
+    // Guardar cantidad de productos en el carrito
+    $cantidad_carrito = 0;
+    // Contar productos del carrito solo si el usuario es cliente
+    if (isset($_SESSION["id_usuario"]) && isset($_SESSION["tipo_usuario"]) && $_SESSION["tipo_usuario"] == "cliente") {
+        require_once "config/conexion.php";
+        $id_usuario_menu = intval($_SESSION["id_usuario"]);
+        $sql_carrito_menu = "SELECT SUM(cd.cantidad) AS total_carrito
+                            FROM carrito c
+                            INNER JOIN carrito_detalle cd ON c.id_carrito = cd.id_carrito
+                            WHERE c.id_usuario = ?";
+        $stmt_carrito_menu = mysqli_prepare($conexion, $sql_carrito_menu);
+        if ($stmt_carrito_menu) {
+            mysqli_stmt_bind_param($stmt_carrito_menu, "i", $id_usuario_menu);
+            mysqli_stmt_execute($stmt_carrito_menu);
+            $resultado_carrito_menu = mysqli_stmt_get_result($stmt_carrito_menu);
+            $datos_carrito_menu = mysqli_fetch_assoc($resultado_carrito_menu);
+            if ($datos_carrito_menu && $datos_carrito_menu["total_carrito"] != null) {
+                $cantidad_carrito = intval($datos_carrito_menu["total_carrito"]);
+            }
+        }
+    }
 ?>
-
 <nav class="navbar navbar-expand-lg navbar-custom">
     <div class="container-fluid">
         <!-- Logo -->
@@ -23,7 +44,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="catalogo.php">Catálogo</a>
                 </li>
-                <!-- Nostros solo para clientes y público -->
+                <!-- Mostrar Nosotros solo para público y clientes -->
                 <?php if (!isset($_SESSION["tipo_usuario"]) || $_SESSION["tipo_usuario"] == "cliente") { ?>
                     <li class="nav-item">
                         <a class="nav-link" href="nosotros.php">Nosotros</a>
@@ -35,10 +56,13 @@
                         <a class="nav-link" href="cliente_panel.php">Mi perfil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="carrito.php">Carrito</a>
+                        <a class="nav-link" href="mis_pedidos.php">Mis pedidos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="mis_pedidos.php">Mis pedidos</a>
+                        <a class="nav-link carrito-link" href="carrito.php" aria-label="Carrito de compras">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="carrito-badge"><?php echo $cantidad_carrito; ?></span>
+                        </a>
                     </li>
                 <?php } ?>
                 <!-- Opciones para vendedor -->
@@ -78,9 +102,7 @@
             <!-- Zona derecha: sesión -->
             <div class="d-flex align-items-center gap-2">
                 <?php if (isset($_SESSION["usuario"])) { ?>
-                    <span class="navbar-text me-2">
-                        <?php echo $_SESSION["usuario"]; ?>
-                    </span>
+                    <span class="navbar-text me-2"><?php echo $_SESSION["usuario"]; ?></span>
                     <a class="btn btn-custom2" href="action/cerrar_sesion.php">Cerrar sesión</a>
                 <?php } else { ?>
                     <a class="btn btn-custom me-2" href="login.php">Iniciar sesión</a>

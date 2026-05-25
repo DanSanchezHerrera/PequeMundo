@@ -7,7 +7,7 @@
     --fuente-texto: 'Atkinson Hyperlegible', sans-serif;
 }
 
-/*BODY (fuente + color de fondo)*/
+/*BODY*/
 body {
     font-family: 'Atkinson Hyperlegible', sans-serif;
     background-color: #faf7f2;
@@ -28,7 +28,7 @@ main {
     flex: 1;
 }
 
-/*INICIO (imagen de inicio + h2)*/
+/*INICIO*/
 .imagen-home {
     max-width: 150px;
 }
@@ -37,4 +37,41 @@ h2 {
     font-family: 'Nunito', sans-serif;
     color: #9a7c3a;
     margin-top: 20px;
+}
+
+/*CARRITO*/
+
+/* Botón seguir comprando */
+.btn-seguir-comprando {
+    background-color: #42a0bf !important;
+    color: #ffffff !important;
+    border: none !important;
+    font-family: var(--fuente-texto);
+    font-weight: 700;
+    box-shadow: 0 6px 12px rgba(66, 160, 191, 0.25);
+    transition: all 0.2s ease;
+}
+
+.btn-seguir-comprando:hover {
+    background-color: #2f7187 !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+
+
+/*Boton finalizar compra*/
+.btn-finalizar-compra {
+    background-color: #9a7c3a !important;
+    color: #ffffff !important;
+    border: none !important;
+    font-family: var(--fuente-texto);
+    font-weight: 700;
+    box-shadow: 0 6px 12px rgba(66, 160, 191, 0.25);
+    transition: all 0.2s ease;
+}
+
+.btn-finalizar-compra:hover {
+    background-color: #b39044 !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
 }
