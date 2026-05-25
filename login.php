@@ -51,9 +51,6 @@
                                         required
                                     >
                                 </div>
-                                <div class="text-end mb-4">
-                                    <a href="#" class="login-link">Olvidé mi contraseña</a>
-                                </div>
                                 <div class="text-center mb-4">
                                     <button type="submit" name="btnLogin" class="btn btn-custom px-5">
                                         Iniciar sesión
