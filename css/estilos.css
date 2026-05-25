@@ -96,7 +96,7 @@ h2 {
 
 /* Botón finalizar compra */
 .btn-finalizar-compra {
-    background-color: #2f7187 !important;
+    background-color: #9a7c3a !important;
     color: #ffffff !important;
     border: none !important;
     font-family: var(--fuente-texto);
@@ -106,7 +106,7 @@ h2 {
 }
 
 .btn-finalizar-compra:hover {
-    background-color: #42a0bf !important;
+    background-color: #b39044!important;
     color: #ffffff !important;
     transform: translateY(-2px);
 }
