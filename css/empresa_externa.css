@@ -1,0 +1,88 @@
+/* EMPRESA EXTERNA */
+
+/* Estilo general */
+body {
+    background-color: #faf7f2;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar externa */
+.navbar-externa {
+    background-color: #2f7187;
+}
+
+/* Encabezado principal */
+.hero-externo {
+    background-color: #fcdb7e;
+    border-radius: 14px;
+    padding: 35px;
+    box-shadow: 0 6px 16px rgba(72, 56, 18, 0.14);
+}
+
+/* Título principal */
+.titulo-externo {
+    color: #2f7187;
+    font-weight: 700;
+}
+
+/* Texto descriptivo */
+.texto-externo {
+    color: #555555;
+}
+
+/* Badge de API */
+.badge-api {
+    background-color: #9a7c3a;
+}
+
+/* Icono del encabezado */
+.icono-hero {
+    color: #ffffff;
+}
+
+/* Card del producto */
+.card-producto {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(72, 56, 18, 0.12);
+    height: 100%;
+}
+
+/* Imagen del producto */
+.img-producto {
+    height: 220px;
+    object-fit: cover;
+    background-color: #f2eee8;
+}
+
+/* Precio del producto */
+.precio-producto {
+    color: #9a7c3a;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* Stock del producto */
+.stock-producto {
+    color: #2f7187;
+    font-weight: 600;
+}
+
+/* Botón de marca */
+.btn-marca {
+    background-color: #2f7187;
+    color: #ffffff;
+    border: none;
+    font-weight: 600;
+}
+
+.btn-marca:hover {
+    background-color: #42a0bf;
+    color: #ffffff;
+}
+
+/* Mensaje de carga */
+.mensaje-carga {
+    color: #555555;
+}
