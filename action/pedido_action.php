@@ -182,8 +182,8 @@ if (isset($_POST["btnCrearPedido"])) {
         }
         // Confirmar transacción
         mysqli_commit($conexion);
-        // Redirigir a pago simulado
-        header("Location: ../pago_simulado.php?id_pedido=" . $id_pedido);
+        // Redirigir a creación de pago con Mercado Pago
+        header("Location: ../action/pago_action.php?id_pedido=" . $id_pedido);
         exit();
     } catch (Exception $e) {
         // Revertir cambios si ocurre un error
