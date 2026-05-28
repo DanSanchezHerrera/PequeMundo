@@ -2,15 +2,15 @@
 // Iniciar sesión
 session_start();
 // Incluir conexión a la base de datos
-require_once "config/conexion.php";
+require_once "../config/conexion.php";
 // Verificar que exista sesión iniciada
 if (!isset($_SESSION["id_usuario"])) {
-    header("Location: login.php");
+    header("Location: ../login.php");
     exit();
 }
 // Verificar que solo el administrador pueda acceder
 if (!isset($_SESSION["tipo_usuario"]) || $_SESSION["tipo_usuario"] != "admin") {
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit();
 }
 // Inicializar variables para el formulario
@@ -47,7 +47,7 @@ if (isset($_GET["editar"])) {
         }
     }
 }
-// Buscar todos los usuarios
+// Listar todos los usuarios
 $sql_usuarios = "SELECT id_usuario, nombre, apellido, mail, telefono, direccion, region, comuna, tipo_usuario FROM usuario ORDER BY id_usuario DESC";
 $resultado_usuarios = mysqli_query($conexion, $sql_usuarios);
 ?>
@@ -62,13 +62,13 @@ $resultado_usuarios = mysqli_query($conexion, $sql_usuarios);
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <!-- Estilos propios -->
-        <link rel="stylesheet" href="css/estilos.css">
-        <link rel="stylesheet" href="css/navbar.css">
-        <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="../css/estilos.css">
+        <link rel="stylesheet" href="../css/navbar.css">
+        <link rel="stylesheet" href="../css/footer.css">
     </head>
     <body>
         <!-- Menú -->
-        <?php include "masterpage/menu.php"; ?>
+        <?php include "../masterpage/menu.php"; ?>
         <!-- Contenido principal -->
         <main class="container my-5">
             <!-- Encabezado -->
@@ -84,7 +84,7 @@ $resultado_usuarios = mysqli_query($conexion, $sql_usuarios);
                 <?php } else { ?>
                     <h4 class="mb-4">Registrar usuario</h4>
                 <?php } ?>
-                <form action="action/usuario_admin_action.php" method="POST">
+                <form action="../action/usuario_admin_action.php" method="POST">
                     <?php if ($modo_edicion) { ?>
                         <input type="hidden" name="id_usuario" value="<?php echo intval($id_usuario_editar); ?>">
                     <?php } ?>
@@ -239,7 +239,7 @@ $resultado_usuarios = mysqli_query($conexion, $sql_usuarios);
                                                 </a>
                                                 <!-- Eliminar usuario -->
                                                 <?php if (intval($usuario["id_usuario"]) != intval($_SESSION["id_usuario"])) { ?>
-                                                    <form action="action/usuario_admin_action.php" method="POST" onsubmit="return confirm('¿Seguro que deseas eliminar este usuario?');">
+                                                    <form action="../action/usuario_admin_action.php" method="POST" onsubmit="return confirm('¿Seguro que deseas eliminar este usuario?');">
                                                         <input type="hidden" name="id_usuario" value="<?php echo intval($usuario["id_usuario"]); ?>">
                                                         <button type="submit" name="btnEliminarUsuario" class="btn btn-sm btn-danger">
                                                             Eliminar
@@ -265,7 +265,7 @@ $resultado_usuarios = mysqli_query($conexion, $sql_usuarios);
             </section>
         </main>
         <!-- Footer -->
-        <?php include "masterpage/footer.php"; ?>
+        <?php include "../masterpage/footer.php"; ?>
         <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>

@@ -24,7 +24,7 @@ function telefonoValido($telefono) {
 }
 // Redirigir a gestionar usuarios
 function volverGestionUsuarios() {
-    header("Location: ../gestionar_usuarios.php");
+    header("Location: ../admin/gestionar_usuarios.php");
     exit();
 }
 /* REGISTRAR USUARIO */
@@ -43,7 +43,7 @@ if (isset($_POST["btnRegistrarUsuario"])) {
     if (empty($nombre) || empty($apellido) || empty($mail) || empty($telefono) || empty($password) || empty($tipo_usuario)) {
         echo "<script>
                 alert('Debe completar todos los campos obligatorios');
-                window.location.href = '../gestionar_usuarios.php';
+                window.location.href = '../admin/gestionar_usuarios.php';
             </script>";
         exit();
     }
@@ -51,7 +51,7 @@ if (isset($_POST["btnRegistrarUsuario"])) {
     if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
         echo "<script>
                 alert('El email ingresado no es válido');
-                window.location.href = '../gestionar_usuarios.php';
+                window.location.href = '../admin/gestionar_usuarios.php';
             </script>";
         exit();
     }
@@ -59,7 +59,7 @@ if (isset($_POST["btnRegistrarUsuario"])) {
     if (!telefonoValido($telefono)) {
         echo "<script>
                 alert('El teléfono debe tener formato chileno. Ejemplo: +56912345678');
-                window.location.href = '../gestionar_usuarios.php';
+                window.location.href = '../admin/gestionar_usuarios.php';
             </script>";
         exit();
     }
@@ -67,7 +67,7 @@ if (isset($_POST["btnRegistrarUsuario"])) {
     if (strlen($password) < 8) {
         echo "<script>
                 alert('La contraseña debe tener al menos 8 caracteres');
-                window.location.href = '../gestionar_usuarios.php';
+                window.location.href = '../admin/gestionar_usuarios.php';
             </script>";
         exit();
     }
@@ -75,7 +75,7 @@ if (isset($_POST["btnRegistrarUsuario"])) {
     if (!tipoUsuarioValido($tipo_usuario)) {
         echo "<script>
                 alert('Tipo de usuario no válido');
-                window.location.href = '../gestionar_usuarios.php';
+                window.location.href = '../admin/gestionar_usuarios.php';
             </script>";
         exit();
     }
@@ -85,7 +85,7 @@ if (isset($_POST["btnRegistrarUsuario"])) {
     if (!$stmt_verificar) {
         echo "<script>
                 alert('Error al verificar correo');
-                window.location.href = '../gestionar_usuarios.php';
+                window.location.href = '../admin/gestionar_usuarios.php';
             </script>";
         exit();
     }
@@ -95,7 +95,7 @@ if (isset($_POST["btnRegistrarUsuario"])) {
     if (mysqli_num_rows($resultado_verificar) > 0) {
         echo "<script>
                 alert('El email ya está registrado');
-                window.location.href = '../gestionar_usuarios.php';
+                window.location.href = '../admin/gestionar_usuarios.php';
             </script>";
         exit();
     }
@@ -117,7 +117,7 @@ if (isset($_POST["btnRegistrarUsuario"])) {
     if (!$stmt) {
         echo "<script>
                 alert('Error al preparar el registro de usuario');
-                window.location.href = '../gestionar_usuarios.php';
+                window.location.href = '../admin/gestionar_usuarios.php';
             </script>";
         exit();
     }
@@ -137,13 +137,13 @@ if (isset($_POST["btnRegistrarUsuario"])) {
     if (mysqli_stmt_execute($stmt)) {
         echo "<script>
                 alert('Usuario registrado correctamente');
-                window.location.href = '../gestionar_usuarios.php';
+                window.location.href = '../admin/gestionar_usuarios.php';
             </script>";
         exit();
     } else {
         echo "<script>
                 alert('Error al registrar usuario');
-                window.location.href = '../gestionar_usuarios.php';
+                window.location.href = '../admin/gestionar_usuarios.php';
                 </script>";
         exit();
     }
@@ -165,7 +165,7 @@ if (isset($_POST["btnActualizarUsuario"])) {
     if ($id_usuario <= 0 || empty($nombre) || empty($apellido) || empty($mail) || empty($telefono) || empty($tipo_usuario)) {
         echo "<script>
                 alert('Debe completar correctamente los campos obligatorios');
-                window.location.href = '../gestionar_usuarios.php';
+                window.location.href = '../admin/gestionar_usuarios.php';
             </script>";
         exit();
     }
@@ -173,7 +173,7 @@ if (isset($_POST["btnActualizarUsuario"])) {
     if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
         echo "<script>
                 alert('El email ingresado no es válido');
-                window.location.href = '../gestionar_usuarios.php?editar=$id_usuario';
+                window.location.href = '../admin/gestionar_usuarios.php?editar=$id_usuario';
             </script>";
         exit();
     }
@@ -181,7 +181,7 @@ if (isset($_POST["btnActualizarUsuario"])) {
     if (!telefonoValido($telefono)) {
         echo "<script>
                 alert('El teléfono debe tener formato chileno. Ejemplo: +56912345678');
-                window.location.href = '../gestionar_usuarios.php?editar=$id_usuario';
+                window.location.href = '../admin/gestionar_usuarios.php?editar=$id_usuario';
             </script>";
         exit();
     }
@@ -189,7 +189,7 @@ if (isset($_POST["btnActualizarUsuario"])) {
     if (!tipoUsuarioValido($tipo_usuario)) {
         echo "<script>
                 alert('Tipo de usuario no válido');
-                window.location.href = '../gestionar_usuarios.php?editar=$id_usuario';
+                window.location.href = '../admin/gestionar_usuarios.php?editar=$id_usuario';
             </script>";
         exit();
     }
@@ -197,7 +197,7 @@ if (isset($_POST["btnActualizarUsuario"])) {
     if (!empty($password) && strlen($password) < 8) {
         echo "<script>
                 alert('La contraseña debe tener al menos 8 caracteres');
-                window.location.href = '../gestionar_usuarios.php?editar=$id_usuario';
+                window.location.href = '../admin/gestionar_usuarios.php?editar=$id_usuario';
             </script>";
         exit();
     }
@@ -207,7 +207,7 @@ if (isset($_POST["btnActualizarUsuario"])) {
     if (!$stmt_verificar) {
         echo "<script>
                 alert('Error al verificar correo');
-                window.location.href = '../gestionar_usuarios.php?editar=$id_usuario';
+                window.location.href = '../admin/gestionar_usuarios.php?editar=$id_usuario';
             </script>";
         exit();
     }
@@ -217,7 +217,7 @@ if (isset($_POST["btnActualizarUsuario"])) {
     if (mysqli_num_rows($resultado_verificar) > 0) {
         echo "<script>
                 alert('El email ya está registrado por otro usuario');
-                window.location.href = '../gestionar_usuarios.php?editar=$id_usuario';
+                window.location.href = '../admin/gestionar_usuarios.php?editar=$id_usuario';
             </script>";
         exit();
     }
@@ -240,7 +240,7 @@ if (isset($_POST["btnActualizarUsuario"])) {
         if (!$stmt) {
             echo "<script>
                     alert('Error al preparar actualización');
-                    window.location.href = '../gestionar_usuarios.php?editar=$id_usuario';
+                    window.location.href = '../admin/gestionar_usuarios.php?editar=$id_usuario';
                 </script>";
             exit();
         }
@@ -274,7 +274,7 @@ if (isset($_POST["btnActualizarUsuario"])) {
         if (!$stmt) {
             echo "<script>
                     alert('Error al preparar actualización');
-                    window.location.href = '../gestionar_usuarios.php?editar=$id_usuario';
+                    window.location.href = '../admin/gestionar_usuarios.php?editar=$id_usuario';
                 </script>";
             exit();
         }
@@ -296,13 +296,13 @@ if (isset($_POST["btnActualizarUsuario"])) {
     if (mysqli_stmt_execute($stmt)) {
         echo "<script>
                 alert('Usuario actualizado correctamente');
-                window.location.href = '../gestionar_usuarios.php';
+                window.location.href = '../admin/gestionar_usuarios.php';
             </script>";
         exit();
     } else {
         echo "<script>
                 alert('Error al actualizar usuario');
-                window.location.href = '../gestionar_usuarios.php?editar=$id_usuario';
+                window.location.href = '../admin/gestionar_usuarios.php?editar=$id_usuario';
             </script>";
         exit();
     }
@@ -319,7 +319,7 @@ if (isset($_POST["btnEliminarUsuario"])) {
     if ($id_usuario_eliminar == intval($_SESSION["id_usuario"])) {
         echo "<script>
                 alert('No puedes eliminar tu propia cuenta');
-                window.location.href = '../gestionar_usuarios.php';
+                window.location.href = '../admin/gestionar_usuarios.php';
             </script>";
         exit();
     }
@@ -333,7 +333,7 @@ if (isset($_POST["btnEliminarUsuario"])) {
         if (mysqli_num_rows($resultado_pedidos) > 0) {
             echo "<script>
                     alert('No se puede eliminar este usuario porque tiene pedidos asociados');
-                    window.location.href = '../gestionar_usuarios.php';
+                    window.location.href = '../admin/gestionar_usuarios.php';
                 </script>";
             exit();
         }
@@ -344,7 +344,7 @@ if (isset($_POST["btnEliminarUsuario"])) {
     if (!$stmt_eliminar) {
         echo "<script>
                 alert('Error al preparar eliminación');
-                window.location.href = '../gestionar_usuarios.php';
+                window.location.href = '../admin/gestionar_usuarios.php';
             </script>";
         exit();
     }
@@ -352,18 +352,18 @@ if (isset($_POST["btnEliminarUsuario"])) {
     if (mysqli_stmt_execute($stmt_eliminar)) {
         echo "<script>
                 alert('Usuario eliminado correctamente');
-                window.location.href = '../gestionar_usuarios.php';
+                window.location.href = '../admin/gestionar_usuarios.php';
             </script>";
         exit();
     } else {
         echo "<script>
                 alert('Error al eliminar usuario');
-                window.location.href = '../gestionar_usuarios.php';
+                window.location.href = '../admin/gestionar_usuarios.php';
             </script>";
         exit();
     }
 }
 // Redirigir si no se recibe una acción válida
-header("Location: ../gestionar_usuarios.php");
+header("Location: ../admin/gestionar_usuarios.php");
 exit();
 ?>

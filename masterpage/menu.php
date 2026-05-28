@@ -3,11 +3,15 @@
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
+    // Definir ruta base según la carpeta desde donde se carga el menú
+    $carpeta_actual = basename(dirname($_SERVER["SCRIPT_NAME"]));
+    $carpetas_internas = array("admin", "gestion", "cliente", "finanzas");
+    $ruta_base = in_array($carpeta_actual, $carpetas_internas) ? "../" : "";
     // Guardar cantidad de productos en el carrito
     $cantidad_carrito = 0;
     // Contar productos del carrito solo si el usuario es cliente
     if (isset($_SESSION["id_usuario"]) && isset($_SESSION["tipo_usuario"]) && $_SESSION["tipo_usuario"] == "cliente") {
-        require_once "config/conexion.php";
+        require_once $ruta_base . "config/conexion.php";
         $id_usuario_menu = intval($_SESSION["id_usuario"]);
         $sql_carrito_menu = "SELECT SUM(cd.cantidad) AS total_carrito
                             FROM carrito c
@@ -27,91 +31,86 @@
 ?>
 <nav class="navbar navbar-expand-lg navbar-custom">
     <div class="container-fluid">
-        <!-- Logo -->
-        <a class="navbar-brand" href="index.php">
-            <img src="img/pequeMundo_logo.png" alt="Logo PequeMundo" width="140" height="56" class="d-inline-block align-text-top">
+        <!-- Mostrar logo -->
+        <a class="navbar-brand" href="<?php echo $ruta_base; ?>index.php">
+            <img src="<?php echo $ruta_base; ?>img/pequeMundo_logo.png" alt="Logo PequeMundo" width="140" height="56" class="d-inline-block align-text-top">
         </a>
-        <!-- Botón responsive -->
+        <!-- Mostrar botón responsive -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPequeMundo" aria-controls="menuPequeMundo" aria-expanded="false" aria-label="Abrir menú">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="menuPequeMundo">
-            <!-- Menú público -->
+            <!-- Mostrar menú principal -->
             <ul class="navbar-nav ms-auto me-4 mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">Inicio</a>
+                    <a class="nav-link" href="<?php echo $ruta_base; ?>index.php">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="catalogo.php">Catálogo</a>
+                    <a class="nav-link" href="<?php echo $ruta_base; ?>catalogo.php">Catálogo</a>
                 </li>
                 <!-- Mostrar Nosotros solo para público y clientes -->
                 <?php if (!isset($_SESSION["tipo_usuario"]) || $_SESSION["tipo_usuario"] == "cliente") { ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="nosotros.php">Nosotros</a>
+                        <a class="nav-link" href="<?php echo $ruta_base; ?>nosotros.php">Nosotros</a>
                     </li>
                 <?php } ?>
-                <!-- Opciones para cliente -->
+                <!-- Mostrar opciones para cliente -->
                 <?php if (isset($_SESSION["tipo_usuario"]) && $_SESSION["tipo_usuario"] == "cliente") { ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="cliente_panel.php">Mi perfil</a>
+                        <a class="nav-link" href="<?php echo $ruta_base; ?>cliente/cliente_panel.php">Mi perfil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="mis_pedidos.php">Mis pedidos</a>
+                        <a class="nav-link" href="<?php echo $ruta_base; ?>cliente/mis_pedidos.php">Mis pedidos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link carrito-link" href="carrito.php" aria-label="Carrito de compras">
+                        <a class="nav-link carrito-link" href="<?php echo $ruta_base; ?>carrito.php" aria-label="Carrito de compras">
                             <i class="fa-solid fa-cart-shopping"></i>
                             <span class="carrito-badge"><?php echo $cantidad_carrito; ?></span>
                         </a>
                     </li>
                 <?php } ?>
-                <!-- Opciones para vendedor -->
+                <!-- Mostrar opciones para vendedor -->
                 <?php if (isset($_SESSION["tipo_usuario"]) && $_SESSION["tipo_usuario"] == "vendedor") { ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="gestionar_productos.php">Gestionar Productos</a>
+                        <a class="nav-link" href="<?php echo $ruta_base; ?>gestion/gestionar_productos.php">Gestionar Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="gestionar_pedidos.php">Gestionar Pedidos</a>
+                        <a class="nav-link" href="<?php echo $ruta_base; ?>gestion/gestionar_pedidos.php">Gestionar Pedidos</a>
                     </li>
                 <?php } ?>
-                <!-- Opciones para administrador -->
+                <!-- Mostrar opciones para administrador -->
                 <?php if (isset($_SESSION["tipo_usuario"]) && $_SESSION["tipo_usuario"] == "admin") { ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="gestionar_productos.php">Gestionar Productos</a>
+                        <a class="nav-link" href="<?php echo $ruta_base; ?>gestion/gestionar_productos.php">Gestionar Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="gestionar_pedidos.php">Gestionar Pedidos</a>
+                        <a class="nav-link" href="<?php echo $ruta_base; ?>gestion/gestionar_pedidos.php">Gestionar Pedidos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="gestionar_usuarios.php">Gestionar Usuarios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="finanzas/index.php">
-                            <i class="fa-solid fa-chart-line me-1"></i>Finanzas
-                        </a>
+                        <a class="nav-link" href="<?php echo $ruta_base; ?>admin/gestionar_usuarios.php">Gestionar Usuarios</a>
                     </li>
                 <?php } ?>
-                <!-- Opciones para finanzas -->
+                <!-- Mostrar opciones para finanzas -->
                 <?php if (isset($_SESSION["tipo_usuario"]) && $_SESSION["tipo_usuario"] == "finanzas") { ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="reportes.php">Reportes</a>
+                        <a class="nav-link" href="<?php echo $ruta_base; ?>finanzas/reportes.php">Reportes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="ranking.php">Ranking Productos</a>
+                        <a class="nav-link" href="<?php echo $ruta_base; ?>finanzas/productos_mas_vendidos.php">Productos más vendidos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="historial.php">Historial de ventas</a>
+                        <a class="nav-link" href="<?php echo $ruta_base; ?>finanzas/historial_ventas.php">Historial de ventas</a>
                     </li>
                 <?php } ?>
             </ul>
-            <!-- Zona derecha: sesión -->
+            <!-- Mostrar zona de sesión -->
             <div class="d-flex align-items-center gap-2">
                 <?php if (isset($_SESSION["usuario"])) { ?>
-                    <span class="navbar-text me-2"><?php echo $_SESSION["usuario"]; ?></span>
-                    <a class="btn btn-custom2" href="action/cerrar_sesion.php">Cerrar sesión</a>
+                    <span class="navbar-text me-2"><?php echo htmlspecialchars($_SESSION["usuario"]); ?></span>
+                    <a class="btn btn-custom2" href="<?php echo $ruta_base; ?>action/cerrar_sesion.php">Cerrar sesión</a>
                 <?php } else { ?>
-                    <a class="btn btn-custom me-2" href="login.php">Iniciar sesión</a>
-                    <a class="btn btn-custom" href="registro.php">Registrarse</a>
+                    <a class="btn btn-custom me-2" href="<?php echo $ruta_base; ?>login.php">Iniciar sesión</a>
+                    <a class="btn btn-custom" href="<?php echo $ruta_base; ?>registro.php">Registrarse</a>
                 <?php } ?>
             </div>
         </div>

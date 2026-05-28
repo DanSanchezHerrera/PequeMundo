@@ -1,13 +1,13 @@
 <?php
-    // Inicia la sesión para poder validar el tipo de usuario
+    // Iniciar sesión para validar el tipo de usuario
     session_start();
     // Conexión BD
-    require_once "config/conexion.php";
+    require_once "../config/conexion.php";
     // Validar solo admin y vendedor pueden ingresar
     if (!isset($_SESSION["tipo_usuario"]) || ($_SESSION["tipo_usuario"] != "admin" && $_SESSION["tipo_usuario"] != "vendedor")) {
         echo "<script>
                 alert('No tienes permiso para acceder a esta página');
-                window.location.href = 'index.php';
+                window.location.href = '../index.php';
             </script>";
         exit();
     }
@@ -42,13 +42,13 @@
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <!-- Estilos propios -->
-        <link rel="stylesheet" href="css/estilos.css">
-        <link rel="stylesheet" href="css/navbar.css">
-        <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="../css/estilos.css">
+        <link rel="stylesheet" href="../css/navbar.css">
+        <link rel="stylesheet" href="../css/footer.css">
     </head>
     <body>
         <!-- Menu -->
-        <?php include 'masterpage/menu.php'; ?>
+        <?php include '../masterpage/menu.php'; ?>
         <!-- MAIN -->
         <main class="container my-5">
             <h2 class="mb-4">Gestionar productos</h2>
@@ -64,11 +64,11 @@
                                 <h4 class="mb-3">Agregar producto</h4>
                             <?php } ?>
                             <!-- Formulario productos -->
-                            <form action="action/producto_action.php" method="POST" enctype="multipart/form-data">
+                            <form action="../action/producto_action.php" method="POST" enctype="multipart/form-data">
                                 <!-- Campos ocultos para editar -->
                                 <?php if ($producto_editar) { ?>
                                     <input type="hidden" name="id_producto" value="<?php echo $producto_editar['id_producto']; ?>">
-                                    <input type="hidden" name="imagen_actual" value="<?php echo $producto_editar['imagen']; ?>">
+                                    <input type="hidden" name="imagen_actual" value="<?php echo htmlspecialchars($producto_editar['imagen']); ?>">
                                 <?php } ?>
                                 <!-- Nombre del producto -->
                                 <div class="mb-3">
@@ -189,7 +189,7 @@
                                                     <!-- Imagen del producto -->
                                                     <td>
                                                         <img 
-                                                            src="<?php echo $producto['imagen']; ?>" 
+                                                            src="../<?php echo $producto['imagen']; ?>" 
                                                             alt="<?php echo $producto['nombre']; ?>" 
                                                             width="70"
                                                         >
@@ -225,7 +225,7 @@
                                                             Editar
                                                         </a>
                                                         <!-- Formulario para activar o desactivar producto -->
-                                                        <form action="action/producto_action.php" method="POST" class="d-inline">
+                                                        <form action="../action/producto_action.php" method="POST" class="d-inline">
                                                             <input type="hidden" name="id_producto" value="<?php echo $producto['id_producto']; ?>">
                                                             <input type="hidden" name="estado_actual" value="<?php echo $producto['estado']; ?>">
                                                             <button type="submit" name="btnCambiarEstadoProducto" class="btn btn-sm btn-secondary mb-1">
@@ -252,6 +252,6 @@
             </div>
         </main>
         <!-- Footer -->
-        <?php include 'masterpage/footer.php'; ?>
+        <?php include '../masterpage/footer.php'; ?>
     </body>
 </html>

@@ -27,7 +27,7 @@ function subirImagenProducto($input_name) {
     if (!in_array($extension, $extensiones_permitidas)) {
         echo "<script>
                 alert('Solo se permiten imágenes JPG, JPEG, PNG o WEBP');
-                window.location.href = '../gestionar_productos.php';
+                window.location.href = '../gestion/gestionar_productos.php';
             </script>";
         exit();
     }
@@ -48,7 +48,7 @@ function subirImagenProducto($input_name) {
     } else {
         echo "<script>
                 alert('No se pudo subir la imagen del producto');
-                window.location.href = '../gestionar_productos.php';
+                window.location.href = '../gestion/gestionar_productos.php';
             </script>";
         exit();
     }
@@ -68,7 +68,7 @@ if (isset($_POST["btnRegistrarProducto"])) {
     if (empty($nombre) || empty($descripcion) || $precio < 0 || $stock < 0 || empty($estado)) {
         echo "<script>
                 alert('Debe completar correctamente todos los campos');
-                window.location.href = '../gestionar_productos.php';
+                window.location.href = '../gestion/gestionar_productos.php';
             </script>";
         exit();
     }
@@ -76,7 +76,7 @@ if (isset($_POST["btnRegistrarProducto"])) {
     if ($estado != "activo" && $estado != "inactivo") {
         echo "<script>
                 alert('Estado de producto no válido');
-                window.location.href = '../gestionar_productos.php';
+                window.location.href = '../gestion/gestionar_productos.php';
             </script>";
         exit();
     }
@@ -86,7 +86,7 @@ if (isset($_POST["btnRegistrarProducto"])) {
     if ($ruta_imagen == null) {
         echo "<script>
                 alert('Debe seleccionar una imagen');
-                window.location.href = '../gestionar_productos.php';
+                window.location.href = '../gestion/gestionar_productos.php';
             </script>";
         exit();
     }
@@ -105,7 +105,7 @@ if (isset($_POST["btnRegistrarProducto"])) {
     if (!$stmt) {
         echo "<script>
                 alert('Error al preparar el registro del producto');
-                window.location.href = '../gestionar_productos.php';
+                window.location.href = '../gestion/gestionar_productos.php';
             </script>";
         exit();
     }
@@ -124,13 +124,13 @@ if (isset($_POST["btnRegistrarProducto"])) {
     if (mysqli_stmt_execute($stmt)) {
         echo "<script>
                 alert('Producto registrado correctamente');
-                window.location.href = '../gestionar_productos.php';
+                window.location.href = '../gestion/gestionar_productos.php';
             </script>";
         exit();
     } else {
         echo "<script>
                 alert('Error al registrar el producto');
-                window.location.href = '../gestionar_productos.php';
+                window.location.href = '../gestion/gestionar_productos.php';
             </script>";
         exit();
     }
@@ -151,7 +151,7 @@ if (isset($_POST["btnActualizarProducto"])) {
     if ($id_producto <= 0 || empty($nombre) || empty($descripcion) || $precio < 0 || $stock < 0 || empty($estado)) {
         echo "<script>
                 alert('Debe completar correctamente todos los campos');
-                window.location.href = '../gestionar_productos.php';
+                window.location.href = '../gestion/gestionar_productos.php';
             </script>";
         exit();
     }
@@ -159,12 +159,12 @@ if (isset($_POST["btnActualizarProducto"])) {
     if ($estado != "activo" && $estado != "inactivo") {
         echo "<script>
                 alert('Estado de producto no válido');
-                window.location.href = '../gestionar_productos.php';
+                window.location.href = '../gestion/gestionar_productos.php';
             </script>";
         exit();
     }
 
-    /* Imagen - si no sube nueva, se mantiene :) */
+    /* Mantener imagen actual si no se sube una nueva */
     if (isset($_FILES["imagen"]) && $_FILES["imagen"]["error"] == 0) {
         $ruta_imagen = subirImagenProducto("imagen");
     } else {
@@ -185,7 +185,7 @@ if (isset($_POST["btnActualizarProducto"])) {
     if (!$stmt) {
         echo "<script>
                 alert('Error al preparar la actualización del producto');
-                window.location.href = '../gestionar_productos.php';
+                window.location.href = '../gestion/gestionar_productos.php';
             </script>";
         exit();
     }
@@ -202,17 +202,17 @@ if (isset($_POST["btnActualizarProducto"])) {
         $id_producto
     );
 
-    /* ¿Se actualizó? */
+    /* Verificar actualización */
     if (mysqli_stmt_execute($stmt)) {
         echo "<script>
                 alert('Producto actualizado correctamente');
-                window.location.href = '../gestionar_productos.php';
+                window.location.href = '../gestion/gestionar_productos.php';
             </script>";
         exit();
     } else {
         echo "<script>
                 alert('Error al actualizar el producto');
-                window.location.href = '../gestionar_productos.php';
+                window.location.href = '../gestion/gestionar_productos.php';
             </script>";
         exit();
     }
@@ -228,7 +228,7 @@ if (isset($_POST["btnCambiarEstadoProducto"])) {
     if ($id_producto <= 0) {
         echo "<script>
                 alert('Producto no válido');
-                window.location.href = '../gestionar_productos.php';
+                window.location.href = '../gestion/gestionar_productos.php';
             </script>";
         exit();
     }
@@ -248,7 +248,7 @@ if (isset($_POST["btnCambiarEstadoProducto"])) {
     if (!$stmt) {
         echo "<script>
                 alert('Error al preparar el cambio de estado');
-                window.location.href = '../gestionar_productos.php';
+                window.location.href = '../gestion/gestionar_productos.php';
             </script>";
         exit();
     }
@@ -258,13 +258,13 @@ if (isset($_POST["btnCambiarEstadoProducto"])) {
     if (mysqli_stmt_execute($stmt)) {
         echo "<script>
                 alert('Estado del producto actualizado correctamente');
-                window.location.href = '../gestionar_productos.php';
+                window.location.href = '../gestion/gestionar_productos.php';
             </script>";
         exit();
     } else {
         echo "<script>
                 alert('Error al cambiar el estado del producto');
-                window.location.href = '../gestionar_productos.php';
+                window.location.href = '../gestion/gestionar_productos.php';
             </script>";
         exit();
     }
@@ -272,6 +272,6 @@ if (isset($_POST["btnCambiarEstadoProducto"])) {
 
 
 /* Si alguien entra al action directamente */
-header("Location: ../gestionar_productos.php");
+header("Location: ../gestion/gestionar_productos.php");
 exit();
 ?>
