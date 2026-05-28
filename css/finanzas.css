@@ -1,0 +1,90 @@
+/* FINANZAS */
+
+/* Iconos de encabezado */
+.icono-finanzas {
+    color: #9a7c3a;
+}
+
+/* Cajas de resumen */
+.stat-box {
+    border-left: 4px solid #9a7c3a;
+    border-radius: 6px;
+}
+
+.stat-numero {
+    font-family: var(--fuente-titulos);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2f7187;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: #6c757d;
+    text-transform: uppercase;
+}
+
+/* Botón de filtro */
+.btn-filtrar {
+    background-color: #9a7c3a;
+    color: #ffffff;
+    border: none;
+    font-family: var(--fuente-texto);
+    font-weight: 700;
+}
+
+.btn-filtrar:hover {
+    background-color: #b39044;
+    color: #ffffff;
+}
+
+/* Navegación interna */
+.link-finanzas {
+    color: #9a7c3a;
+    text-decoration: none;
+}
+
+.link-finanzas:hover {
+    color: #2f7187;
+}
+
+/* Encabezado de tablas */
+.tabla-finanzas-head {
+    background-color: #fdf3d0;
+}
+
+/* Ranking */
+.rank-badge {
+    min-width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    background-color: #f0e8d4;
+    color: #9a7c3a;
+}
+
+.rank-badge.top1 {
+    background-color: #ffd700;
+    color: #5a4000;
+}
+
+.rank-badge.top2 {
+    background-color: #c0c0c0;
+    color: #333333;
+}
+
+.rank-badge.top3 {
+    background-color: #cd7f32;
+    color: #ffffff;
+}
+
+.img-ranking {
+    width: 58px;
+    height: 58px;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: #f2eee8;
+}
