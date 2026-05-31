@@ -132,8 +132,8 @@ if ($pedido["estado_pago"] == "pendiente") {
         if (!mysqli_stmt_execute($stmt_pago)) {
             throw new Exception("Error al actualizar pago");
         }
-        // Actualizar pedido como recibido
-        $sql_actualizar_pedido = "UPDATE pedido SET estado_pedido = 'recibido' WHERE id_pedido = ?";
+        // Actualizar pedido como confirmado
+        $sql_actualizar_pedido = "UPDATE pedido SET estado_pedido = 'confirmado' WHERE id_pedido = ?";
         $stmt_actualizar_pedido = mysqli_prepare($conexion, $sql_actualizar_pedido);
         if (!$stmt_actualizar_pedido) {
             throw new Exception("Error al preparar pedido");
