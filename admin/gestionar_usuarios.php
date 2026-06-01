@@ -48,7 +48,7 @@ if (isset($_GET["editar"])) {
     }
 }
 // Listar todos los usuarios
-$sql_usuarios = "SELECT id_usuario, nombre, apellido, mail, telefono, direccion, region, comuna, tipo_usuario FROM usuario ORDER BY id_usuario DESC";
+$sql_usuarios = "SELECT id_usuario, nombre, apellido, mail, telefono, direccion, region, comuna, tipo_usuario FROM usuario ORDER BY id_usuario ASC";
 $resultado_usuarios = mysqli_query($conexion, $sql_usuarios);
 ?>
 <!DOCTYPE html>
