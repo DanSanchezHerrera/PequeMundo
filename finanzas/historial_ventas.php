@@ -23,6 +23,70 @@ if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $fecha_desde)) {
 if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $fecha_hasta)) {
     $fecha_hasta = date("Y-m-d");
 }
+// Obtener texto visible del estado del pedido
+function obtenerTextoEstadoPedido($estado) {
+    switch ($estado) {
+        case "pendiente_pago":
+            return "Pendiente pago";
+        case "confirmado":
+            return "Confirmado";
+        case "preparacion":
+            return "En preparación";
+        case "camino":
+            return "En camino";
+        case "entregado":
+            return "Entregado";
+        case "cancelado":
+            return "Cancelado";
+        default:
+            return ucfirst($estado);
+    }
+}
+// Obtener clase visual del estado del pedido
+function obtenerClaseEstadoPedido($estado) {
+    switch ($estado) {
+        case "pendiente_pago":
+            return "bg-secondary";
+        case "confirmado":
+            return "bg-warning text-dark";
+        case "preparacion":
+            return "bg-info text-dark";
+        case "camino":
+            return "bg-primary";
+        case "entregado":
+            return "bg-success";
+        case "cancelado":
+            return "bg-danger";
+        default:
+            return "bg-secondary";
+    }
+}
+// Obtener texto visible del estado de pago
+function obtenerTextoEstadoPago($estado) {
+    switch ($estado) {
+        case "pagado":
+            return "Pagado";
+        case "pendiente":
+            return "Pendiente";
+        case "rechazado":
+            return "Rechazado";
+        default:
+            return ucfirst($estado);
+    }
+}
+// Obtener clase visual del estado de pago
+function obtenerClaseEstadoPago($estado) {
+    switch ($estado) {
+        case "pagado":
+            return "bg-success";
+        case "pendiente":
+            return "bg-warning text-dark";
+        case "rechazado":
+            return "bg-danger";
+        default:
+            return "bg-secondary";
+    }
+}
 // Crear consulta base del historial
 $sql_historial = "SELECT
                     p.id_pedido,
@@ -109,7 +173,7 @@ while ($venta = mysqli_fetch_assoc($resultado_historial)) {
                         </div>
                         <div class="col-md-3">
                             <label class="form-label">Estado pedido</label>
-                            <select name="estado_pedido" class="form-control">
+                            <select name="estado_pedido" class="form-select">
                                 <option value="">Todos</option>
                                 <option value="confirmado" <?php if ($estado_pedido == "confirmado") echo "selected"; ?>>Confirmado</option>
                                 <option value="preparacion" <?php if ($estado_pedido == "preparacion") echo "selected"; ?>>Preparación</option>
@@ -186,13 +250,13 @@ while ($venta = mysqli_fetch_assoc($resultado_historial)) {
                                                 <?php } ?>
                                             </td>
                                             <td>
-                                                <span class="badge estado-pedido">
-                                                    <?php echo htmlspecialchars($venta["estado_pedido"]); ?>
+                                                <span class="badge <?php echo obtenerClaseEstadoPedido($venta["estado_pedido"]); ?>">
+                                                    <?php echo htmlspecialchars(obtenerTextoEstadoPedido($venta["estado_pedido"])); ?>
                                                 </span>
                                             </td>
                                             <td>
-                                                <span class="badge estado-pagado">
-                                                    <?php echo htmlspecialchars($venta["estado_pago"]); ?>
+                                                <span class="badge <?php echo obtenerClaseEstadoPago($venta["estado_pago"]); ?>">
+                                                    <?php echo htmlspecialchars(obtenerTextoEstadoPago($venta["estado_pago"])); ?>
                                                 </span>
                                             </td>
                                             <td class="text-end">$<?php echo number_format($venta["total_pedido"], 0, ",", "."); ?></td>
